@@ -6,7 +6,6 @@ import cart from "../assets/Navbar/Vector (2).png";
 import Search from "../assets/Navbar/akar-icons_search.png";
 import { IoMenu } from "react-icons/io5";
 
-
 const Navbar = () => {
   const [navToggle, setNavtoggle] = useState(false);
 
@@ -16,22 +15,22 @@ const Navbar = () => {
 
   const NavLinks = [
     {
-      id:1,
+      id: 1,
       title: "Home",
-      href: "#",
+      href: "/",
     },
     {
-      id:2,
+      id: 2,
       title: "Shop",
-      href: "#",
+      href: "/shop",
     },
     {
-      id:3,
+      id: 3,
       title: "About",
       href: "#",
     },
     {
-      id:4,
+      id: 4,
       title: "Contact",
       href: "#",
     },
@@ -57,7 +56,7 @@ const Navbar = () => {
             {NavLinks.map((item) => {
               return (
                 <li key={item.title} className="font-Poppins">
-                  <a href="">{item.title}</a>
+                  <a href={item.href}>{item.title}</a>
                 </li>
               );
             })}
@@ -79,7 +78,7 @@ const Navbar = () => {
                 {NavLinks.map((item) => {
                   return (
                     <li key={item.id} className="font-Poppins py-2">
-                      <a href="">{item.title}</a>
+                      <a href={item.href}>{item.title}</a>
                     </li>
                   );
                 })}

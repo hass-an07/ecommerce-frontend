@@ -11,6 +11,16 @@ import product7 from "../assets/Home/product_Images/image 7.png";
 import product9 from "../assets/Home/product_Images/image 9.png";
 import product8 from "../assets/Home/product_Images/Images.png";
 
+// gallery images
+import first_1 from "../assets/Home/GallaryImages/first-1.png";
+import first_2 from "../assets/Home/GallaryImages/first-2.png";
+import first_3 from "../assets/Home/GallaryImages/first-3.png";
+import first_4 from "../assets/Home/GallaryImages/first-4.png";
+import secornd from "../assets/Home/GallaryImages/secrond.png";
+import third_1 from "../assets/Home/GallaryImages/third-1.png";
+import third_2 from "../assets/Home/GallaryImages/third-2.png";
+import third_3 from "../assets/Home/GallaryImages/third-3.png";
+import third_4 from "../assets/Home/GallaryImages/third-4.png";
 // swipper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -21,6 +31,7 @@ import "../index.css";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import Products from "../components/Products";
 
 const Home = () => {
   const categoryData = [
@@ -162,27 +173,7 @@ const Home = () => {
           </h1>
           <div className="products grid lg:grid-cols-4 grid-cols-1 sm:grid-cols-2 px-6 gap-12">
             {ProductData.map((product) => {
-              return (
-                <div key={product.id} className="product mb-5">
-                  <img src={product.image} alt="" className="w-full" />
-                  <div className="details bg-[#F4F5F7] py-4">
-                    <h1 className="text-[#3A3A3A] px-5 text-3xl py-1 font-Poppins poppins-semibold ">
-                      {product.title}
-                    </h1>
-                    <h3 className="text-[#898989] px-5 py-1 font-Poppins poppins-medium text-lg">
-                      {product.slug}
-                    </h3>
-                    <h2 className="text-[#3A3A3A] px-5 py-1  flex justify-between">
-                      <div className="priceNow font-Poppins poppins-semibold text-xl">
-                        Rp {product.priceNow}
-                      </div>
-                      <div className="oldPrice text-[#B0B0B0] text-lg font-Poppins poppins-regular line-through	">
-                        {product.oldPrice}
-                      </div>
-                    </h2>
-                  </div>
-                </div>
-              );
+              return <Products key={product.id} product={product} />;
             })}
           </div>
           {/* show more btn */}
@@ -242,6 +233,59 @@ const Home = () => {
             </div>
           </div>
         </section>
+        {/* gallary section */}
+        {/* <section className="container mx-auto"> */}
+        <h2 className="text-[#616161] font-Poppins poppins-semibold text-center text-lg">
+          Share your setup with
+        </h2>
+        <h1 className="text-center font-Poppins poppins-bold text-[#3A3A3A] text-3xl py-1">
+          #FuniroFurniture
+        </h1>
+        {/* gallery images  */}
+        <div className="gallery-images grid grid-cols-1 sm:grid-cols-8 lg:grid-cols-10 mb-40">
+          <div className="first sm:col-span-3 lg:col-span-4">
+            <div className="flex">
+              <div className="-ms-32">
+                <img src={first_1} alt="" />
+              </div>
+              <div className="flex items-end mx-2">
+                <img src={first_2} alt="" />
+              </div>
+            </div>
+            <div className="flex">
+              <div className=" mt-4">
+                <img src={first_3} alt="" className="" />
+              </div>
+              <div className="mt-4 mx-2">
+                <img src={first_4} alt="" className="" />
+              </div>
+            </div>
+          </div>
+          <div className="second my-2 sm:col-span-2 lg:col-span-2 grid items-center">
+            <div className="">
+              <img src={secornd} alt="" />
+            </div>
+          </div>
+          <div className="third sm:col-span-3 lg:col-span-4 ">
+            <div className="flex mb-4">
+              <div className="mx-2 flex items-end">
+                <img src={third_1} alt="" />
+              </div>
+              <div className="">
+                <img src={third_2} alt="" />
+              </div>
+            </div>
+            <div className="flex">
+              <div className="mx-2">
+                <img src={third_3} alt="" />
+              </div>
+              <div className="">
+                <img src={third_4} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* </section> */}
       </div>
     </>
   );

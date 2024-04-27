@@ -28,7 +28,7 @@ const Footer = () => {
     <>
       <div className="container mx-auto">
         <div className="content">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 px-5">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 sm:ps-0 ps-3">
             <li>
               <h1 className="text-3xl font-Poppins poppins-bold">Funiro.</h1>
               <p className="text-[#9F9F9F] font-Poppins poppins-regular pt-12">
@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
         {/* footer */}
         <hr className="text-[#D9D9D9] my-8" />
-        <h1 className="text-md lg:text-lg font-Poppins poppins-regular mb-8 px-5">
+        <h1 className="text-md lg:text-lg font-Poppins poppins-regular mb-8 ps-5">
           2023 HS Developers. All rights reverved
         </h1>
       </div>
