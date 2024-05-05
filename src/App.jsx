@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Shop from "./Pages/Shop";
+import Single_product from "./Pages/Single_product";
+import Cart from "./Pages/Cart";
+import CheckOut from "./Pages/CheckOut";
+import UserRegister from "./Pages/UserRegister";
+import UserLogin from "./Pages/UserLogin";
+import { useSelector } from "react-redux";
 
 const App = () => {
+  const [ISuserToken, setUserToken] = useState(null);
+  const { userToken } = useSelector((state) => state.userToken);
+
   return (
     <>
       <Navbar />
@@ -13,6 +22,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/product/:id" element={<Single_product />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/checkout"
+            element={ISuserToken ? <CheckOut /> : <Navigate to="/login" />}
+          />
+          <Route path="/register" element={<UserRegister />} />
+          <Route path="/login" element={<UserLogin />} />
         </Routes>
       </BrowserRouter>
       <Footer />

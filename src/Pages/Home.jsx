@@ -32,6 +32,7 @@ import "../index.css";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import Products from "../components/Products";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const categoryData = [
@@ -173,7 +174,11 @@ const Home = () => {
           </h1>
           <div className="products grid lg:grid-cols-4 grid-cols-1 sm:grid-cols-2 px-6 gap-12">
             {ProductData.map((product) => {
-              return <Products key={product.id} product={product} />;
+              return (
+               <Link key={product.id} to={`/product/${product.id}`}> 
+               <Products  product={product} />
+               </Link>
+              );
             })}
           </div>
           {/* show more btn */}
@@ -257,7 +262,7 @@ const Home = () => {
                 <img src={first_3} alt="" className="" />
               </div>
               <div className="mt-4 mx-2">
-                <img src={first_4} alt="" className="" />
+                <img src={first_4} alt="" className="w-[410px]" />
               </div>
             </div>
           </div>

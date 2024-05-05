@@ -5,12 +5,12 @@ const Footer = () => {
     {
         id:1,
       title: "Home",
-      href: "#",
+      href: "/",
     },
     {
         id:2,
       title: "Shop",
-      href: "#",
+      href: "/shop",
     },
     {
         id:3,
@@ -28,7 +28,7 @@ const Footer = () => {
     <>
       <div className="container mx-auto">
         <div className="content">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 sm:ps-0 ps-3">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 xl:ps-0 ps-3">
             <li>
               <h1 className="text-3xl font-Poppins poppins-bold">Funiro.</h1>
               <p className="text-[#9F9F9F] font-Poppins poppins-regular pt-12">
@@ -46,7 +46,7 @@ const Footer = () => {
                       key={item.id}
                       className="font-Poppins poppins-medium text-lg"
                     >
-                      <a href="">{item.title}</a>
+                      <a href={item.href}>{item.title}</a>
                     </li>
                   );
                 })}

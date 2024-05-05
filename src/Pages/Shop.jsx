@@ -13,6 +13,7 @@ import product7 from "../assets/Home/product_Images/image 7.png";
 import product9 from "../assets/Home/product_Images/image 9.png";
 import product8 from "../assets/Home/product_Images/Images.png";
 import Frame from "../components/Frame";
+import { Link } from "react-router-dom";
 const Shop = () => {
   const ProductData = [
     {
@@ -167,7 +168,7 @@ const Shop = () => {
   ];
   return (
     <>
-      <Header />
+      <Header Page="Shop"/>
       <div className="filters -mt-2 py-5 bg-[#F9F1E7]">
         <div className="container mx-auto lg:flex justify-between sm:ps-0 ps-3">
           <div className="first grid grid-cols-8 sm:flex gap-6 items-center">
@@ -206,7 +207,11 @@ const Shop = () => {
       <div className="container mx-auto my-8">
         <div className="products grid lg:grid-cols-4 grid-cols-1 sm:grid-cols-2 sm:p-0 px-2 gap-12">
           {ProductData.map((item) => {
-            return <Products key={item.id} product={item} />;
+            return (
+              <Link to={`/product/${item.id}`} key={item.id}>
+                <Products  product={item} />
+              </Link>
+            );
           })}
         </div>
         <div className="pagination  flex justify-center gap-6 my-8">
