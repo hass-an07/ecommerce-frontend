@@ -33,7 +33,6 @@ const UserRegister = () => {
         setErrors({});
       }
       if(data.status === true){
-        dispatch(data.access_token);
         navigate("/login");
       }
 

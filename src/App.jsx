@@ -15,6 +15,11 @@ const App = () => {
   const [ISuserToken, setUserToken] = useState(null);
   const { userToken } = useSelector((state) => state.userToken);
 
+  useEffect(() => {
+    setUserToken(userToken);
+    console.log(ISuserToken);
+  }, [userToken]); // Add userToken to the dependency array
+
   return (
     <>
       <Navbar />

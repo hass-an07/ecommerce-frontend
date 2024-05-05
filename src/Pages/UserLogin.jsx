@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { userTokenSlice } from "../features/userAcessToken";
 
 const UserLogin = () => {
   const [formData, setFormData] = useState({});
   const [error , setError] = useState('');
   const [message , setMessage] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const getData = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,8 +30,7 @@ const UserLogin = () => {
         setMessage(data.message)
       }
       if(data.status === true){
-        console.log(data.access_token)
-        navigate('/')
+        dispatch(userTokenSlice.actions.setUserToken(data.access_token));
 
     }
   }
